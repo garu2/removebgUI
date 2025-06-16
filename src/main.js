@@ -87,7 +87,7 @@ function handleFiles(e) {
     if (file.type.match('image.*')) {
       processFile(file);
     } else {
-      alert('Please upload an image file');
+      console.log('Please upload an image file');
     }
   }
 }
@@ -144,7 +144,7 @@ async function processFile(file) {
     resultSection.classList.remove('hidden');
   } catch (error) {
     console.error('Error:', error);
-    alert('Failed to remove background: ' + error.message);
+    console.log('Failed to remove background: ' + error.message);
   } finally {
     // Hide processing message
     processingMessage.classList.add('hidden');

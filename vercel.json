@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/remove-bg",
-      "destination": "${VITE_API_URL}/remove-bg"
+      "destination": "https://web-production-a06e.up.railway.app/remove-bg"
     },
     {
       "source": "/api/:path*",
-      "destination": "${VITE_API_URL}/:path*"
+      "destination": "https://web-production-a06e.up.railway.app/:path*"
     }
   ],
   "headers": [
