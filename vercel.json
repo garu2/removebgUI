@@ -1,0 +1,22 @@
+{
+  "rewrites": [
+    {
+      "source": "/remove-bg",
+      "destination": "${VITE_API_URL}/remove-bg"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "${VITE_API_URL}/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/remove-bg",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    }
+  ]
+}
