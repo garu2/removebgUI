@@ -5,8 +5,8 @@ export default defineConfig(({ command, mode }) => {
   // Carga las variables de entorno según el modo
   const env = loadEnv(mode, process.cwd(), '');
   
-  // Usamos la URL directamente por ahora para evitar problemas
-  const apiUrl = 'https://web-production-a06e.up.railway.app';
+  // Utilizamos la URL de la API desde las variables de entorno
+  const apiUrl = env.VITE_API_URL;
   
   return {
     server: {
