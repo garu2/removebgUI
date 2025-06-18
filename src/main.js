@@ -1,12 +1,15 @@
 import './style.css'
 
-// API endpoint for background removal (usando el proxy de Vite para evitar CORS)
-// En desarrollo local, usamos la ruta relativa para que funcione el proxy y evitar CORS
-// En producción, usamos la URL base de la variable de entorno
+// API endpoint for background removal
+// En desarrollo usamos la ruta relativa que maneja el proxy de Vite
+// En producción usamos la variable de entorno (configurada en el panel de Vercel)
 const isProduction = import.meta.env.PROD;
-const REMOVE_BG_API_URL = isProduction ? (import.meta.env.VITE_API_URL + '/remove-bg') : '/remove-bg';
+const REMOVE_BG_API_URL = isProduction && import.meta.env.VITE_API_URL 
+  ? import.meta.env.VITE_API_URL + '/remove-bg'
+  : '/remove-bg';
+
+// Solo mostramos si estamos en desarrollo o producción, no la URL completa
 console.log('Environment:', isProduction ? 'Production' : 'Development');
-console.log('Using API path:', REMOVE_BG_API_URL);
 
 // DOM Elements
 const dropArea = document.getElementById('drop-area');
