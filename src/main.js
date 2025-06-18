@@ -1,11 +1,7 @@
 import './style.css'
 
 // API endpoint for background removal
-// Siempre usamos la ruta relativa para que el proxy lo maneje
-const REMOVE_BG_API_URL = '/remove-bg';
-
-// No registramos la URL en los logs
-console.log('Using background removal service');
+const REMOVE_BG_API_URL = import.meta.env.VITE_API_URL + '/remove-bg';
 
 // DOM Elements
 const dropArea = document.getElementById('drop-area');
