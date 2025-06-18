@@ -1,15 +1,11 @@
 import './style.css'
 
 // API endpoint for background removal
-// En desarrollo usamos la ruta relativa que maneja el proxy de Vite
-// En producción usamos la variable de entorno (configurada en el panel de Vercel)
-const isProduction = import.meta.env.PROD;
-const REMOVE_BG_API_URL = isProduction && import.meta.env.VITE_API_URL 
-  ? import.meta.env.VITE_API_URL + '/remove-bg'
-  : '/remove-bg';
+// Siempre usamos la ruta relativa para que el proxy lo maneje
+const REMOVE_BG_API_URL = '/remove-bg';
 
-// Solo mostramos si estamos en desarrollo o producción, no la URL completa
-console.log('Environment:', isProduction ? 'Production' : 'Development');
+// No registramos la URL en los logs
+console.log('Using background removal service');
 
 // DOM Elements
 const dropArea = document.getElementById('drop-area');
