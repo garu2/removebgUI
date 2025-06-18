@@ -1,7 +1,12 @@
 import './style.css'
 
 // API endpoint for background removal (usando el proxy de Vite para evitar CORS)
-const REMOVE_BG_API_URL = '/remove-bg';
+// En desarrollo local, usamos la ruta relativa para que funcione el proxy y evitar CORS
+// En producción, usamos la URL base de la variable de entorno
+const isProduction = import.meta.env.PROD;
+const REMOVE_BG_API_URL = isProduction ? (import.meta.env.VITE_API_URL + '/remove-bg') : '/remove-bg';
+console.log('Environment:', isProduction ? 'Production' : 'Development');
+console.log('Using API path:', REMOVE_BG_API_URL);
 
 // DOM Elements
 const dropArea = document.getElementById('drop-area');
