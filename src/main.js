@@ -109,7 +109,7 @@ async function processFile(file) {
     const formData = new FormData();
     formData.append('image', file);
 
-    console.log('Sending request to:', REMOVE_BG_API_URL);
+    //console.log('Sending request to:', REMOVE_BG_API_URL);
     
     // Al usar el proxy de Vite, no necesitamos configuración especial de CORS
     const response = await fetch(REMOVE_BG_API_URL, {
