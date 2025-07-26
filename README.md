@@ -5,7 +5,9 @@
 ### [Deploy](https://removebg-ui.vercel.app/)
 
 ## 💻 Tutorial
-<!-- Video tutorial will be added here -->
+<a href='https://youtu.be/2O7GPaXTEcg' target='_blank'>
+    <img width='30%' src='https://img.youtube.com/vi/2O7GPaXTEcg/mqdefault.jpg' alt='Remove bg' />
+</a>
 
 ## 📋 Features
 - Drag & drop interface for image uploads
